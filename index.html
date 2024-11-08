@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asa's Lab 4</title>
+    <link rel="stylesheet" href="pinkstyle.css">
+
+</head>
+<body>
+
+
+    <div class="section">
+        <form id="alertForm">
+            <label for="nameInput">Enter your name babe!:</label>
+            <input type="text" id="nameInput" required>
+            <button type="button" onclick="alertName()">Alert Me</button>
+        </form>
+    </div>
+
+
+    <div class="section">
+        <button onclick="changeColor()">Change Color Now! </button>
+    </div>
+
+
+    <div class="section">
+        <form id="textForm">
+            <label for="textInput">Enter text:</label>
+            <input type="text" id="textInput">
+            <button type="button" onclick="validateText()">Validate Text</button>
+        </form>
+    </div>
+
+
+    <div class="section">
+        <h1 id="mainHeading">Welcome to Asa's Pink Passion Lab 4</h1>
+        <button onclick="addText()"> Add Text </button>
+    </div>
+
+    <script>
+        function alertName() {
+            const name = document.getElementById("nameInput").value;
+            alert("Hi " + name + "!");
+        }
+
+        let isLightPink = true;
+function changeColor() {
+    document.body.style.backgroundColor = isLightPink ? "#ffc0cf" : "#ff69b4";
+    isLightPink = !isLightPink;
+}
+
+        function validateText() {
+            const text = document.getElementById("textInput").value;
+            const validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (validation.test(text)) {
+                alert("Text contains special characters! We dont like that.");
+            } else {
+                alert("Text is valid honey.");
+            }
+        }
+
+        function addText() {
+            const heading = document.getElementById("mainHeading");
+            heading.textContent += " I love Pink! 🎀🧸🫧🩷⋆˙⟡♡ ";
+        }
+        
+    </script>
+</body>
+</html>
